@@ -11,19 +11,14 @@ html(lang="en")
     main
       div#welcome
         form
-          input#roomName(placeholder='room name', required, type='text')
-          input#name(placeholder='nickname', required, type='text')
+          input(placeholder='room name', ,required, type='text')
           button Enter Room
-        h4 Open Rooms:
-        ul
-      div#room
-        h3
-        ul
-        form#name
-          input(placeholder="Nickname" required, type="text")
-          button change
-        form#msg
-          input(placeholder='message', required, type='text')
-          button Send
+      div#call
+        div#myStream
+          video#myFace(autoplay, playsinline, width='400', height='400')
+          button#mute Mute
+          button#camera Turn Camera Off
+          select#cameras 
+        video#peersStream(autoplay, playsinline, width='400', height='400')
     script(src='/socket.io/socket.io.js')
     script(src='/public/js/app.js')
